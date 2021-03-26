@@ -60,7 +60,7 @@
 
         // finally draw the poses
         drawPose(pose);
-        console.log(pose.keypoints);
+        
     }
 
     function drawPose(pose) {
@@ -71,6 +71,7 @@
                 const minPartConfidence = 0.5;
                 tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
                 tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+                console.log(pose.keypoints);
             }
         }
     }
