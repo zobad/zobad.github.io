@@ -33,9 +33,9 @@ function setup() {
   }
   brain = ml5.neuralNetwork(options);
   const modelInfo = {
-    model: 'Bak/model.json',
-    metadata: 'Bak/model_meta.json',
-    weights: 'Bak/model.weights.bin',
+    model: 'For/model.json',
+    metadata: 'For/model_meta.json',
+    weights: 'For/model.weights.bin',
   };
   brain.load(modelInfo, brainLoaded);
 }
@@ -65,7 +65,7 @@ function gotResult(error, results) {
   if (results[0].confidence > 0.75) {
     poseLabel = results[0].label.toUpperCase();
   }
-  //console.log(results[0].confidence);
+  console.log(results[0].confidence);
   classifyPose();
 }
 
