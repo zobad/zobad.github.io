@@ -26,8 +26,9 @@
         const size = 200;
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
+        //await webcam.setup(); // request access to the webcam
+        //await webcam.play();
+        webcam = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
         window.requestAnimationFrame(loop);
 
         // append/get elements to the DOM
